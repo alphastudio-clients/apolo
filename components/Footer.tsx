@@ -6,7 +6,8 @@ export default function Footer() {
       <div className="wrap">
         <div className="foot-grid">
           <div>
-            <div className="foot-logo">{site.name.toUpperCase()}</div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/apolo-logo-blanco.png" alt="Apolo" className="foot-logo-img" />
             <p style={{ maxWidth: 340 }}>
               Centro capilar y estético en el Microcentro de Buenos Aires. Cuidamos tu cabello, tu
               piel y tu cuerpo con criterio profesional.
