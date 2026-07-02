@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Apolo · Centro Capilar y Estético · Microcentro, Buenos Aires</title>
+<meta name="description" content="Apolo Centro Capilar y Estético en Microcentro, Buenos Aires. Implante capilar, tratamientos anticaída, depilación láser, despigmentantes, peeling, anti-acné y más. Turnos por WhatsApp." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#1f2568;        /* azul profundo del logo */
+    --navy-2:#2a3186;      /* azul royal */
+    --navy-3:#161b4d;      /* azul oscuro para fondos */
+    --blue-soft:#f1f3fb;   /* fondo celeste muy claro */
+    --blue-mid:#5560c9;    /* azul medio para detalles */
+    --gold:#b8963f;        /* dorado sobrio del laurel */
+    --ink:#171a33;         /* texto principal */
+    --muted:#5c6079;       /* texto secundario */
+    --line:#e6e8f2;        /* bordes */
+    --white:#ffffff;
+    --radius:16px;
+    --shadow:0 24px 60px -28px rgba(31,37,104,.4);
+    --shadow-sm:0 10px 28px -16px rgba(31,37,104,.32);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--white);
+    line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.serif{font-family:'Cormorant Garamond',serif;letter-spacing:.005em}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--navy-2);display:inline-flex;align-items:center;gap:10px}
+  .eyebrow::before{content:"";width:28px;height:1.5px;background:var(--gold)}
+  svg.ic{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:1.6;
+    stroke-linecap:round;stroke-linejoin:round;flex:0 0 auto}
+  .btn{display:inline-flex;align-items:center;gap:9px;justify-content:center;padding:15px 28px;
+    border-radius:8px;font-weight:600;font-size:14.5px;cursor:pointer;border:none;transition:.25s;
+    white-space:nowrap;letter-spacing:.01em}
+  .btn-primary{background:var(--navy);color:#fff;box-shadow:var(--shadow-sm)}
+  .btn-primary:hover{background:var(--navy-2);transform:translateY(-2px)}
+  .btn-ghost{background:transparent;color:var(--navy);border:1.5px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--navy);background:var(--blue-soft)}
+  .btn-wa{background:#128C4A;color:#fff}
+  .btn-wa:hover{background:#0f7a40;transform:translateY(-2px)}
+
+  /* ---------- NAV ---------- */
+  header.nav{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.9);
+    backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .logo{display:flex;align-items:center;gap:12px}
+  .logo .lyre{width:36px;height:36px;flex:0 0 auto;color:var(--navy)}
+  .logo .brand{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;
+    color:var(--navy);letter-spacing:.22em;line-height:1}
+  .logo .sub{font-size:8.5px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);
+    font-weight:600;margin-top:3px}
+  .nav-links{display:flex;align-items:center;gap:32px}
+  .nav-links a{font-size:14px;font-weight:500;color:var(--muted);transition:.2s}
+  .nav-links a:hover{color:var(--navy)}
+  .nav-cta{display:flex;align-items:center;gap:12px}
+  .burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px}
+  .burger span{width:24px;height:2px;background:var(--navy);border-radius:2px;transition:.3s}
+  .mobile-menu{display:none;flex-direction:column;padding:16px 24px 26px;gap:2px;
+    border-bottom:1px solid var(--line);background:#fff}
+  .mobile-menu a{padding:13px 8px;font-weight:500;color:var(--ink);border-radius:8px}
+  .mobile-menu a:hover{background:var(--blue-soft)}
+  .mobile-menu a.btn-primary{color:#fff;justify-content:center;margin-top:12px}
+  .mobile-menu a.btn-primary:hover{background:var(--navy-2)}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative;overflow:hidden;color:#fff;
+    background:linear-gradient(155deg,#2a3186 0%,#1f2568 48%,#161b4d 100%)}
+  .hero::before{content:"";position:absolute;inset:0;opacity:.5;
+    background:radial-gradient(60% 70% at 100% 0%, rgba(184,150,63,.18), transparent 60%)}
+  .hero-inner{position:relative;display:grid;grid-template-columns:1.08fr .92fr;gap:56px;
+    align-items:center;padding:80px 0 88px}
+  .hero h1{font-size:clamp(42px,5.6vw,64px);line-height:1.04;font-weight:600;margin:20px 0 22px}
+  .hero h1 .accent{color:var(--gold)}
+  .hero p.lead{font-size:17px;color:#d5d7ef;max-width:520px;font-weight:300}
+  .hero .eyebrow{color:#e8e9fb}
+  .hero .eyebrow::before{background:var(--gold)}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+  .hero-stats{display:flex;gap:40px;margin-top:48px;flex-wrap:wrap}
+  .hero-stats .num{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;color:#fff;line-height:1}
+  .hero-stats .lbl{font-size:12.5px;color:#b7bae0;margin-top:5px;max-width:130px}
+  .hero-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+    border-radius:18px;padding:34px;backdrop-filter:blur(6px);box-shadow:var(--shadow)}
+  .hero-card h3{font-size:25px;font-weight:600;margin-bottom:6px}
+  .hero-card .sub{font-size:14px;color:#c1c4ea;margin-bottom:22px}
+  .mini-list{display:flex;flex-direction:column;gap:14px}
+  .mini-list .item{display:flex;align-items:center;gap:13px;font-size:14.5px;color:#eef0ff}
+  .mini-list .tick{width:26px;height:26px;border-radius:6px;background:rgba(184,150,63,.18);
+    color:var(--gold);display:grid;place-items:center;flex:0 0 auto}
+  .mini-list .tick svg{width:15px;height:15px}
+  .hero-card .btn{width:100%;margin-top:26px}
+
+  /* ---------- TRUST BAR ---------- */
+  .trust{background:var(--blue-soft);border-bottom:1px solid var(--line)}
+  .trust-inner{display:flex;flex-wrap:wrap;justify-content:center;gap:16px 44px;padding:20px 0;
+    font-size:13.5px;color:var(--navy);font-weight:500}
+  .trust-inner span{display:flex;align-items:center;gap:9px}
+  .trust-inner .ic{width:18px;height:18px;color:var(--gold)}
+
+  /* ---------- SECTION BASE ---------- */
+  section{padding:92px 0}
+  .sec-head{text-align:center;max-width:660px;margin:0 auto 52px}
+  .sec-head h2{font-size:clamp(33px,4.4vw,46px);font-weight:600;margin:16px 0 14px;line-height:1.08}
+  .sec-head p{color:var(--muted);font-size:16px}
+
+  .tabs{display:flex;justify-content:center;gap:6px;margin:0 auto 44px;
+    background:var(--blue-soft);padding:6px;border-radius:10px;width:max-content;max-width:100%}
+  .tab{padding:12px 30px;border-radius:7px;font-weight:600;font-size:14.5px;color:var(--muted);
+    cursor:pointer;border:none;background:none;transition:.2s}
+  .tab.active{background:var(--navy);color:#fff;box-shadow:var(--shadow-sm)}
+
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px;background:#fff;
+    transition:.28s;position:relative;overflow:hidden}
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:transparent}
+  .card .ico{width:54px;height:54px;border-radius:12px;background:var(--blue-soft);
+    display:grid;place-items:center;color:var(--navy-2);margin-bottom:20px}
+  .card h3{font-size:23px;font-weight:600;margin-bottom:8px;line-height:1.2}
+  .card p{font-size:14.5px;color:var(--muted)}
+  .card .tag{position:absolute;top:20px;right:20px;font-size:10px;font-weight:700;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--gold);border:1px solid rgba(184,150,63,.4);
+    padding:4px 10px;border-radius:5px}
+  .card.cta-card{background:var(--blue-soft);border-style:dashed;display:flex;flex-direction:column;justify-content:center}
+  .hidden{display:none}
+
+  /* ---------- POR QUÉ APOLO ---------- */
+  .why{background:var(--navy);color:#fff;border-radius:22px;overflow:hidden}
+  .why-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;padding:68px 60px}
+  .why h2{font-size:clamp(31px,3.8vw,44px);font-weight:600;margin:16px 0 20px;line-height:1.08}
+  .why p.lead{color:#c6c9ee;font-size:16px}
+  .why .eyebrow{color:#e8e9fb}
+  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .why-item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
+    border-radius:12px;padding:24px}
+  .why-item .n{font-family:'Cormorant Garamond',serif;font-size:30px;color:var(--gold);font-weight:700;line-height:1}
+  .why-item h4{font-size:16px;font-weight:600;margin:12px 0 6px}
+  .why-item p{font-size:13.5px;color:#b7bae0}
+
+  /* ---------- CRM QUALIFIER ---------- */
+  .quiz-sec{background:var(--blue-soft)}
+  .quiz{max-width:680px;margin:0 auto;background:#fff;border-radius:20px;box-shadow:var(--shadow);
+    overflow:hidden;border:1px solid var(--line)}
+  .quiz-top{background:var(--navy);color:#fff;padding:30px 34px}
+  .quiz-top h3{font-size:26px;font-weight:600}
+  .quiz-top p{font-size:14px;color:#c1c4ea;margin-top:5px}
+  .progress{height:5px;background:rgba(255,255,255,.16);border-radius:999px;margin-top:20px;overflow:hidden}
+  .progress .bar{height:100%;background:var(--gold);width:16%;transition:.4s;border-radius:999px}
+  .quiz-body{padding:36px 34px 38px}
+  .step{display:none;animation:fade .35s ease}
+  .step.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .q-label{font-size:22px;font-weight:600;font-family:'Cormorant Garamond',serif;margin-bottom:5px;color:var(--ink)}
+  .q-hint{font-size:13.5px;color:var(--muted);margin-bottom:22px}
+  .opts{display:grid;gap:11px}
+  .opt{display:flex;align-items:center;gap:14px;padding:16px 18px;border:1.5px solid var(--line);
+    border-radius:10px;cursor:pointer;font-size:15px;font-weight:500;transition:.18s;background:#fff}
+  .opt:hover{border-color:var(--blue-mid);background:var(--blue-soft)}
+  .opt.sel{border-color:var(--navy);background:var(--blue-soft);box-shadow:inset 0 0 0 1px var(--navy)}
+  .opt .dot{width:20px;height:20px;border-radius:50%;border:2px solid var(--line);flex:0 0 auto;transition:.18s}
+  .opt.sel .dot{border-color:var(--navy);background:var(--navy);box-shadow:inset 0 0 0 3px #fff}
+  .field{margin-bottom:15px}
+  .field label{display:block;font-size:13px;font-weight:600;margin-bottom:7px;color:var(--ink)}
+  .field input{width:100%;padding:14px 16px;border:1.5px solid var(--line);border-radius:9px;font-size:15px;
+    font-family:inherit;transition:.18s}
+  .field input:focus{outline:none;border-color:var(--navy);background:var(--blue-soft)}
+  .consent{font-size:12px;color:var(--muted);margin-top:6px}
+  .quiz-nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:28px}
+  .link-back{background:none;border:none;color:var(--muted);font-weight:600;cursor:pointer;font-size:14px;
+    display:inline-flex;align-items:center;gap:6px;padding:15px 6px}
+  .link-back:hover{color:var(--navy)}
+  .result{display:none;text-align:center;padding:22px 6px}
+  .result.show{display:block;animation:fade .4s}
+  .result .badge{width:66px;height:66px;border-radius:14px;display:grid;place-items:center;margin:0 auto 20px}
+  .result .badge svg{width:30px;height:30px;stroke-width:2}
+  .result.hot .badge{background:rgba(18,140,74,.12);color:#128C4A}
+  .result.warm .badge{background:rgba(184,150,63,.14);color:var(--gold)}
+  .result h3{font-size:27px;font-weight:600;margin-bottom:9px}
+  .result p{color:var(--muted);font-size:15px;max-width:450px;margin:0 auto 24px}
+  .result .btn{width:100%;max-width:360px;margin:0 auto}
+  .summary{background:var(--blue-soft);border-radius:11px;padding:18px 20px;text-align:left;
+    font-size:13.5px;color:var(--muted);margin:0 auto 24px;max-width:430px;line-height:1.9}
+  .summary b{color:var(--ink)}
+
+  /* ---------- UBICACIÓN ---------- */
+  .loc-inner{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:stretch}
+  .loc-info .row{display:flex;gap:15px;padding:19px 0;border-bottom:1px solid var(--line)}
+  .loc-info .row:last-of-type{border-bottom:none}
+  .loc-info .ico{width:46px;height:46px;border-radius:10px;background:var(--blue-soft);color:var(--navy-2);
+    display:grid;place-items:center;flex:0 0 auto}
+  .loc-info .ico svg{width:22px;height:22px}
+  .loc-info .row h4{font-size:16px;font-weight:600;margin-bottom:2px}
+  .loc-info .row p{font-size:14.5px;color:var(--muted)}
+  .map{border-radius:var(--radius);overflow:hidden;min-height:360px;border:1px solid var(--line);
+    background:var(--blue-soft)}
+  .map iframe{width:100%;height:100%;border:0;min-height:360px}
+
+  /* ---------- FAQ ---------- */
+  .faq{max-width:780px;margin:0 auto}
+  .faq-item{border:1px solid var(--line);border-radius:11px;margin-bottom:12px;overflow:hidden;background:#fff}
+  .faq-q{padding:20px 24px;font-weight:600;font-size:15.5px;cursor:pointer;display:flex;
+    justify-content:space-between;align-items:center;gap:14px}
+  .faq-q .plus{color:var(--navy-2);font-size:24px;transition:.3s;flex:0 0 auto;font-weight:300}
+  .faq-item.open .plus{transform:rotate(45deg)}
+  .faq-a{max-height:0;overflow:hidden;transition:.3s;color:var(--muted);font-size:14.5px}
+  .faq-item.open .faq-a{max-height:240px}
+  .faq-a p{padding:0 24px 22px}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--navy-3);color:#fff;padding:64px 0 32px}
+  .foot-grid{display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:44px;padding-bottom:42px;
+    border-bottom:1px solid rgba(255,255,255,.1)}
+  .foot-grid h4{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    margin-bottom:18px;color:#fff}
+  .foot-grid a,.foot-grid p{display:block;color:#b7bae0;font-size:14px;margin-bottom:11px}
+  .foot-grid a:hover{color:#fff}
+  .foot-logo{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;letter-spacing:.22em;margin-bottom:14px}
+  .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:26px;
+    font-size:13px;color:#888cc0}
+
+  .fab{position:fixed;bottom:24px;right:24px;z-index:70;width:58px;height:58px;border-radius:50%;
+    background:#128C4A;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(18,140,74,.6);transition:.25s}
+  .fab:hover{transform:scale(1.07)}
+  .fab svg{width:30px;height:30px;fill:#fff}
+
+  @media(max-width:900px){
+    .hero-inner{grid-template-columns:1fr;gap:40px;padding:56px 0 62px}
+    .why-inner{grid-template-columns:1fr;padding:48px 30px}
+    .loc-inner{grid-template-columns:1fr}
+    .grid{grid-template-columns:repeat(2,1fr)}
+    .foot-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:640px){
+    .nav-links,.nav-cta .btn-ghost{display:none}
+    .burger{display:flex}
+    section{padding:64px 0}
+    .grid{grid-template-columns:1fr}
+    .why-grid{grid-template-columns:1fr}
+    .hero-stats{gap:26px}
+    .foot-grid{grid-template-columns:1fr}
+    .quiz-body{padding:28px 22px 32px}
+    .quiz-top{padding:24px 24px}
+    .wrap{padding:0 18px}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <!-- LOGO: reemplazar este bloque por <img src="logo.svg" ...> cuando subas el logo -->
+    <a href="#" class="logo">
+      <svg class="lyre" viewBox="0 0 100 100" fill="none"><path d="M50 22c-11 0-19 8-21 19-1 8 0 21 4 33M50 22c11 0 19 8 21 19 1 8 0 21-4 33M42 31v40M50 29v44M58 31v40M36 66l14 8 14-8" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/><path d="M28 40c-6 4-9 10-9 10M72 40c6 4 9 10 9 10" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"/></svg>
+      <div><div class="brand">APOLO</div><div class="sub">Centro Capilar · Estético</div></div>
+    </a>
+    <nav class="nav-links">
+      <a href="#servicios">Servicios</a>
+      <a href="#porque">Por qué Apolo</a>
+      <a href="#evaluacion">Evaluación</a>
+      <a href="#ubicacion">Ubicación</a>
+      <a href="#faq">Preguntas</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="#evaluacion" class="btn btn-ghost">Autoevaluación</a>
+      <a href="https://wa.me/5491173658969" target="_blank" rel="noopener" class="btn btn-primary">Reservar turno</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#servicios">Servicios</a>
+    <a href="#porque">Por qué Apolo</a>
+    <a href="#evaluacion">Autoevaluación</a>
+    <a href="#ubicacion">Ubicación</a>
+    <a href="#faq">Preguntas frecuentes</a>
+    <a href="https://wa.me/5491173658969" target="_blank" rel="noopener" class="btn btn-primary">Reservar turno por WhatsApp</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <span class="eyebrow">Centro Capilar y Estético · Buenos Aires</span>
+      <h1>Cuidar tu imagen<br>con criterio <span class="accent">profesional</span></h1>
+      <p class="lead">Tratamientos capilares y estéticos con diagnóstico previo, tecnología y resultados naturales. Acompañamos tu cabello, tu piel y tu cuerpo en el corazón del Microcentro porteño.</p>
+      <div class="hero-cta">
+        <a href="#evaluacion" class="btn btn-primary">Realizar autoevaluación</a>
+        <a href="#servicios" class="btn btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.3)">Ver servicios</a>
+      </div>
+      <div class="hero-stats">
+        <div><div class="num">+2.000</div><div class="lbl">Tratamientos realizados</div></div>
+        <div><div class="num">2</div><div class="lbl">Áreas: capilar y estética</div></div>
+        <div><div class="num">100%</div><div class="lbl">Atención personalizada</div></div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>Reservá tu evaluación</h3>
+      <p class="sub">Respondé unas preguntas breves y definimos juntos el tratamiento adecuado para tu caso.</p>
+      <div class="mini-list">
+        <div class="item"><span class="tick"><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg></span> Diagnóstico y evaluación inicial</div>
+        <div class="item"><span class="tick"><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg></span> Plan de tratamiento a tu medida</div>
+        <div class="item"><span class="tick"><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg></span> Atención profesional y privada</div>
+        <div class="item"><span class="tick"><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg></span> Turnos por WhatsApp, sin demoras</div>
+      </div>
+      <a href="#evaluacion" class="btn btn-primary">Comenzar autoevaluación</a>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust">
+  <div class="wrap trust-inner">
+    <span><svg class="ic" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg> Microcentro · Buenos Aires</span>
+    <span><svg class="ic" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg> Turnos por WhatsApp</span>
+    <span><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg> Lun a Vie · 9 a 19 hs</span>
+    <span><svg class="ic" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg> Atención para todo público</span>
+  </div>
+</div>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Todo lo que hacemos en Apolo</span>
+      <h2>Dos áreas, un mismo estándar de excelencia</h2>
+      <p>Reunimos el cuidado capilar y la estética corporal y facial en un solo lugar. Elegí el área y conocé cada tratamiento.</p>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" data-cat="capilar">Centro Capilar</button>
+      <button class="tab" data-cat="estetico">Sector Estético</button>
+    </div>
+
+    <!-- CAPILAR -->
+    <div class="grid cat capilar">
+      <div class="card"><span class="tag">Destacado</span><div class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8Z"/><path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2Z"/></svg></div><h3>Implante capilar FUE</h3><p>Restauración capilar con técnica FUE, folículo por folículo, para resultados permanentes y naturales.</p></div>
+      <div class="card"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.4-7.7 8.8a1 1 0 0 1-.6 0C7.5 20.4 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.2-2.7a1 1 0 0 1 1.5 0C15.5 3.8 18 5 20 5a1 1 0 0 1 1 1Z"/></svg></div><h3>Tratamiento anticaída</h3><p>Abordaje farmacológico personalizado para frenar la caída y fortalecer el cabello existente.</p></div>
+      <div class="card"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/></svg></div><h3>Mesoterapia capilar</h3><p>Microinyecciones de vitaminas y activos que nutren el folículo y estimulan el crecimiento.</p></div>
+      <div class="card"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7Z"/></svg></div><h3>Plasma rico en plaquetas (PRP)</h3><p>Regeneración con tus propios factores de crecimiento para densificar y revitalizar el cuero cabelludo.</p></div>
+      <div class="card"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg></div><h3>Evaluación y tricoscopía</h3><p>Diagnóstico digital del cuero cabelludo para definir el tratamiento exacto que necesitás.</p></div>
+      <div class="card cta-card"><div class="ico" style="background:#fff"><svg class="ic" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></div><h3>¿No sabés cuál elegir?</h3><p>Hacé la autoevaluación y te orientamos por dónde empezar.</p><a href="#evaluacion" class="btn btn-ghost" style="margin-top:16px">Ir a la autoevaluación</a></div>
+    </div>
+
+    <!-- ESTÉTICO -->
+    <div class="grid cat estetico hidden">
+      <div class="card"><span class="tag">Popular</span><div class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14Z"/></svg></div><h3>Depilación láser</h3><p>Un proceso, no una sesión: reducción progresiva y duradera del vello en rostro y cuerpo.</p></div>
+      <div class="card"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M11 14h2a2 2 0 1 0 0-4h-3c-.6 0-1.1.2-1.4.6L3 16"/><path d="m7 20 1.6-1.4c.3-.4.8-.6 1.4-.6h4c1.1 0 2.1-.4 2.8-1.2l4.6-4.4a2 2 0 0 0-2.75-2.91l-4.2 3.9"/><path d="m2 15 6 6"/></svg></div><h3>Masajes</h3><p>Un momento para frenar: masajes descontracturantes y relajantes para tu bienestar.</p></div>
+      <div class="card"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 9-9 9.7 9.7 0 0 1 6.7 2.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.7 9.7 0 0 1-6.7-2.7L3 16"/><path d="M8 16H3v5"/></svg></div><h3>Exfoliación corporal</h3><p>Renová la piel eliminando células muertas y recuperando suavidad y luminosidad.</p></div>
+      <div class="card"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/></svg></div><h3>Despigmentante corporal</h3><p>Unificá el tono de la piel y tratá manchas en distintas zonas del cuerpo.</p></div>
+      <div class="card"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.4-7.7 8.8a1 1 0 0 1-.6 0C7.5 20.4 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.2-2.7a1 1 0 0 1 1.5 0C15.5 3.8 18 5 20 5a1 1 0 0 1 1 1Z"/><path d="M9.6 11.2c0-.9.7-1.6 1.5-1.6.5 0 .9.2 1.2.6.3-.4.7-.6 1.2-.6.8 0 1.5.7 1.5 1.6 0 1.5-2.7 3.1-2.7 3.1s-2.7-1.6-2.7-3.1Z"/></svg></div><h3>Despigmentante zona íntima</h3><p>Cuidado íntimo para una piel más pareja y radiante, con total privacidad.</p></div>
+      <div class="card"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 14.5s1.3 1.5 3.5 1.5 3.5-1.5 3.5-1.5"/><path d="M9 9h.01M15 9h.01"/></svg></div><h3>Despigmentante facial</h3><p>Tratamiento para manchas y tono desparejo del rostro.</p></div>
+      <div class="card"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.3 2.3 4.7-4.6"/></svg></div><h3>Tratamiento anti-acné</h3><p>Protocolo para controlar el acné, calmar la piel y mejorar su textura.</p></div>
+      <div class="card"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7Z"/></svg></div><h3>Ultrahidratación facial</h3><p>Cuando la piel pide agua: hidratación profunda para un rostro luminoso.</p></div>
+      <div class="card"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4"/></svg></div><h3>Peeling químico</h3><p>Renovación facial que mejora textura, manchas y luminosidad de la piel.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUÉ APOLO -->
+<section id="porque" style="padding-top:24px">
+  <div class="wrap">
+    <div class="why">
+      <div class="why-inner">
+        <div>
+          <span class="eyebrow">Por qué elegir Apolo</span>
+          <h2>Criterio profesional, resultados que se notan</h2>
+          <p class="lead">No hacemos tratamientos en serie. Cada persona tiene una evaluación previa, un plan a medida y un seguimiento real. Ese es el estándar Apolo.</p>
+        </div>
+        <div class="why-grid">
+          <div class="why-item"><div class="n">01</div><h4>Diagnóstico primero</h4><p>Evaluamos antes de proponer. Nada de fórmulas genéricas.</p></div>
+          <div class="why-item"><div class="n">02</div><h4>Resultados naturales</h4><p>Buscamos que se vea bien, no que se note.</p></div>
+          <div class="why-item"><div class="n">03</div><h4>Espacio privado</h4><p>Atención cuidada, discreta y respetuosa.</p></div>
+          <div class="why-item"><div class="n">04</div><h4>Todo en un lugar</h4><p>Capilar y estética en el mismo centro del Microcentro.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CRM QUALIFIER -->
+<section id="evaluacion" class="quiz-sec">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Autoevaluación · 30 segundos</span>
+      <h2>Encontrá el tratamiento adecuado para vos</h2>
+      <p>Respondé unas preguntas breves. Con tus respuestas preparamos una recomendación y coordinamos tu turno por WhatsApp.</p>
+    </div>
+
+    <div class="quiz">
+      <div class="quiz-top">
+        <h3 id="quizTitle">Comencemos</h3>
+        <p id="quizSub">Contanos qué querés mejorar y en qué momento estás.</p>
+        <div class="progress"><div class="bar" id="bar"></div></div>
+      </div>
+      <div class="quiz-body">
+
+        <div class="step active" data-step="1">
+          <div class="q-label">¿Qué te gustaría mejorar?</div>
+          <div class="q-hint">Elegí el área que más te interesa.</div>
+          <div class="opts" data-single>
+            <div class="opt" data-val="Cabello"><span class="dot"></span> Mi cabello (caída, densidad, implante)</div>
+            <div class="opt" data-val="Piel / rostro"><span class="dot"></span> Mi piel / rostro (manchas, acné, hidratación)</div>
+            <div class="opt" data-val="Cuerpo"><span class="dot"></span> Mi cuerpo (depilación láser, despigmentante, masajes)</div>
+            <div class="opt" data-val="Aún no lo defino"><span class="dot"></span> Todavía no estoy seguro/a</div>
+          </div>
+        </div>
+
+        <div class="step" data-step="2">
+          <div class="q-label">¿Hace cuánto venís con esta inquietud?</div>
+          <div class="q-hint">Nos ayuda a entender tu caso.</div>
+          <div class="opts" data-single>
+            <div class="opt" data-val="Menos de 6 meses"><span class="dot"></span> Menos de 6 meses</div>
+            <div class="opt" data-val="6 meses a 2 años"><span class="dot"></span> Entre 6 meses y 2 años</div>
+            <div class="opt" data-val="Más de 2 años"><span class="dot"></span> Más de 2 años</div>
+            <div class="opt" data-val="Es algo puntual"><span class="dot"></span> Es algo puntual / estético</div>
+          </div>
+        </div>
+
+        <div class="step" data-step="3">
+          <div class="q-label">¿Ya realizaste algún tratamiento antes?</div>
+          <div class="q-hint">Sin problema si es tu primera vez.</div>
+          <div class="opts" data-single>
+            <div class="opt" data-val="Primera vez"><span class="dot"></span> Nunca, sería mi primera vez</div>
+            <div class="opt" data-val="Por mi cuenta"><span class="dot"></span> Probé cosas por mi cuenta</div>
+            <div class="opt" data-val="En otro lugar"><span class="dot"></span> Hice tratamientos en otro lugar</div>
+          </div>
+        </div>
+
+        <div class="step" data-step="4">
+          <div class="q-label">¿Cuándo te gustaría comenzar?</div>
+          <div class="q-hint">Esto define con qué prioridad te contactamos.</div>
+          <div class="opts" data-single>
+            <div class="opt" data-val="Lo antes posible" data-score="3"><span class="dot"></span> Lo antes posible</div>
+            <div class="opt" data-val="Dentro de este mes" data-score="2"><span class="dot"></span> Dentro de este mes</div>
+            <div class="opt" data-val="En los próximos meses" data-score="1"><span class="dot"></span> En los próximos meses</div>
+            <div class="opt" data-val="Solo estoy informándome" data-score="0"><span class="dot"></span> Solo estoy informándome</div>
+          </div>
+        </div>
+
+        <div class="step" data-step="5">
+          <div class="q-label">¿Dónde te contactamos?</div>
+          <div class="q-hint">Dejanos tus datos y te escribimos con tu recomendación.</div>
+          <div class="field"><label>Nombre y apellido</label><input id="fName" type="text" placeholder="Tu nombre" autocomplete="name" /></div>
+          <div class="field"><label>WhatsApp</label><input id="fPhone" type="tel" placeholder="Ej: 11 2345 6789" autocomplete="tel" /></div>
+          <div class="field"><label>Email (opcional)</label><input id="fEmail" type="email" placeholder="tucorreo@email.com" autocomplete="email" /></div>
+          <p class="consent">Al continuar aceptás ser contactado/a por Apolo para coordinar tu consulta.</p>
+        </div>
+
+        <div class="result" id="result">
+          <div class="badge" id="resBadge"><svg class="ic" viewBox="0 0 24 24"><path d="m5 12 5 5L20 7"/></svg></div>
+          <h3 id="resTitle">Listo</h3>
+          <p id="resText"></p>
+          <div class="summary" id="resSummary"></div>
+          <a href="#" target="_blank" rel="noopener" class="btn btn-wa" id="resWa">
+            <svg width="19" height="19" viewBox="0 0 24 24" fill="#fff"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.6.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.2-.5.1-.2 0-.4 0-.5 0-.1-.6-1.5-.9-2.1-.2-.5-.4-.4-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 2 3 4.7 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 2-1.4.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2z"/></svg>
+            Coordinar mi turno por WhatsApp
+          </a>
+        </div>
+
+        <div class="quiz-nav" id="quizNav">
+          <button class="link-back" id="backBtn" style="visibility:hidden">← Atrás</button>
+          <button class="btn btn-primary" id="nextBtn" disabled style="padding-left:36px;padding-right:36px">Siguiente →</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UBICACIÓN -->
+<section id="ubicacion">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Dónde estamos</span>
+      <h2>En pleno Microcentro porteño</h2>
+      <p>Nos encontrás en el corazón de Buenos Aires, con fácil acceso en subte y colectivo.</p>
+    </div>
+    <div class="loc-inner">
+      <div class="loc-info">
+        <div class="row"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div><div><h4>Ubicación</h4><p>Microcentro, Ciudad Autónoma de Buenos Aires, Argentina</p></div></div>
+        <div class="row"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><div><h4>Horarios</h4><p>Lunes a viernes de 9:00 a 19:00 hs</p></div></div>
+        <div class="row"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></div><div><h4>WhatsApp</h4><p>+54 11 7365 8969 · turnos y consultas</p></div></div>
+        <div class="row"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></div><div><h4>Email</h4><p>info@apolocentrocapilar.com</p></div></div>
+        <div class="row"><div class="ico"><svg class="ic" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></svg></div><div><h4>Instagram</h4><p>@apolo.centrocapilar · @apolo.centroestetico</p></div></div>
+        <a href="https://wa.me/5491173658969" target="_blank" rel="noopener" class="btn btn-wa" style="margin-top:22px;width:100%">Escribinos por WhatsApp</a>
+      </div>
+      <div class="map">
+        <iframe src="https://www.google.com/maps?q=Microcentro,Buenos+Aires,Argentina&output=embed" loading="lazy" title="Ubicación Apolo"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background:var(--blue-soft)">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Preguntas frecuentes</span>
+      <h2>Lo que más nos consultan</h2>
+    </div>
+    <div class="faq">
+      <div class="faq-item"><div class="faq-q">¿La primera evaluación tiene costo? <span class="plus">+</span></div><div class="faq-a"><p>La evaluación inicial nos permite entender tu caso antes de recomendarte un tratamiento. Escribinos por WhatsApp y te contamos las condiciones vigentes.</p></div></div>
+      <div class="faq-item"><div class="faq-q">¿Atienden a hombres y mujeres? <span class="plus">+</span></div><div class="faq-a"><p>Sí. Apolo es un espacio respetuoso y abierto a todo público. Atendemos a todas las personas que quieran cuidar su cabello, su piel y su cuerpo.</p></div></div>
+      <div class="faq-item"><div class="faq-q">¿Cómo saco un turno? <span class="plus">+</span></div><div class="faq-a"><p>El canal principal es WhatsApp. Podés hacer la autoevaluación de esta página o escribirnos directamente al +54 11 7365 8969.</p></div></div>
+      <div class="faq-item"><div class="faq-q">¿Dónde queda el centro? <span class="plus">+</span></div><div class="faq-a"><p>Estamos en el Microcentro de la Ciudad de Buenos Aires, con fácil acceso en transporte público.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo">APOLO</div>
+        <p style="max-width:340px">Centro capilar y estético en el Microcentro de Buenos Aires. Cuidamos tu cabello, tu piel y tu cuerpo con criterio profesional.</p>
+      </div>
+      <div>
+        <h4>Navegación</h4>
+        <a href="#servicios">Servicios</a>
+        <a href="#porque">Por qué Apolo</a>
+        <a href="#evaluacion">Autoevaluación</a>
+        <a href="#ubicacion">Ubicación</a>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <a href="https://wa.me/5491173658969" target="_blank" rel="noopener">WhatsApp: +54 11 7365 8969</a>
+        <a href="mailto:info@apolocentrocapilar.com">info@apolocentrocapilar.com</a>
+        <p>Lunes a viernes · 9 a 19 hs</p>
+        <p>Microcentro, Buenos Aires</p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Apolo · Centro Capilar y Estético</span>
+      <span>Mockup · versión 1</span>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/5491173658969" target="_blank" rel="noopener" class="fab" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.6.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.2-.5.1-.2 0-.4 0-.5 0-.1-.6-1.5-.9-2.1-.2-.5-.4-.4-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 2 3 4.7 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 2-1.4.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2z"/></svg>
+</a>
+
+<script>
+/* MOBILE MENU */
+const burger=document.getElementById('burger'),mm=document.getElementById('mobileMenu');
+burger.addEventListener('click',()=>{const o=mm.style.display==='flex';mm.style.display=o?'none':'flex';});
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mm.style.display='none'));
+
+/* SERVICE TABS */
+document.querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    const c=t.dataset.cat;
+    document.querySelectorAll('.cat').forEach(g=>g.classList.toggle('hidden',!g.classList.contains(c)));
+  });
+});
+
+/* FAQ */
+document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>q.parentElement.classList.toggle('open')));
+
+/* CRM QUIZ */
+const WA_NUMBER='5491173658969';
+const totalSteps=5;
+let step=1;
+const answers={};
+const bar=document.getElementById('bar');
+const nextBtn=document.getElementById('nextBtn');
+const backBtn=document.getElementById('backBtn');
+const titles={
+  1:{t:'Comencemos',s:'Contanos qué querés mejorar.'},
+  2:{t:'Tu situación',s:'¿Hace cuánto lo venís notando?'},
+  3:{t:'Tu experiencia',s:'¿Realizaste algún tratamiento antes?'},
+  4:{t:'Tu momento',s:'¿Para cuándo lo pensás?'},
+  5:{t:'Casi listo',s:'Dejanos tus datos de contacto.'},
+};
+function showStep(n){
+  document.querySelectorAll('.step').forEach(s=>s.classList.toggle('active',+s.dataset.step===n));
+  bar.style.width=(n/totalSteps*100)+'%';
+  document.getElementById('quizTitle').textContent=titles[n].t;
+  document.getElementById('quizSub').textContent=titles[n].s;
+  backBtn.style.visibility=n>1?'visible':'hidden';
+  nextBtn.textContent=n===totalSteps?'Ver mi recomendación →':'Siguiente →';
+  validate();
+}
+function validate(){
+  if(step===5){
+    const ok=document.getElementById('fName').value.trim() && document.getElementById('fPhone').value.trim();
+    nextBtn.disabled=!ok;
+  }else nextBtn.disabled=!answers[step];
+}
+document.querySelectorAll('.opts[data-single]').forEach(group=>{
+  group.querySelectorAll('.opt').forEach(opt=>{
+    opt.addEventListener('click',()=>{
+      group.querySelectorAll('.opt').forEach(x=>x.classList.remove('sel'));
+      opt.classList.add('sel');
+      answers[step]=opt.dataset.val;
+      if(opt.dataset.score!==undefined) answers._score=+opt.dataset.score;
+      validate();
+    });
+  });
+});
+['fName','fPhone','fEmail'].forEach(id=>document.getElementById(id).addEventListener('input',validate));
+backBtn.addEventListener('click',()=>{if(step>1){step--;showStep(step);}});
+nextBtn.addEventListener('click',()=>{ if(step<totalSteps){step++;showStep(step);} else finish(); });
+
+function finish(){
+  const name=document.getElementById('fName').value.trim();
+  const phone=document.getElementById('fPhone').value.trim();
+  const email=document.getElementById('fEmail').value.trim();
+  const score=answers._score||0;
+  const hot=score>=2;
+
+  document.getElementById('quizNav').style.display='none';
+  document.querySelectorAll('.step').forEach(s=>s.classList.remove('active'));
+  bar.style.width='100%';
+  const res=document.getElementById('result');
+  res.classList.add('show',hot?'hot':'warm');
+  document.getElementById('quizTitle').textContent=hot?'Consulta prioritaria':'Gracias por completar';
+  document.getElementById('quizSub').textContent=hot?'Te contactamos a la brevedad.':'Te enviamos información para cuando estés listo/a.';
+  document.getElementById('resTitle').textContent=hot?('Gracias, '+name):('Gracias, '+name);
+  document.getElementById('resText').textContent=hot
+    ? 'Según tus respuestas, tu caso es prioritario. Tocá el botón y coordinamos tu turno por WhatsApp ahora mismo.'
+    : 'Preparamos una recomendación para vos. Escribinos por WhatsApp cuando quieras avanzar y te asesoramos sin compromiso.';
+  document.getElementById('resSummary').innerHTML=
+    '<b>Interés:</b> '+(answers[1]||'-')+'<br>'+
+    '<b>Tiempo:</b> '+(answers[2]||'-')+'<br>'+
+    '<b>Experiencia:</b> '+(answers[3]||'-')+'<br>'+
+    '<b>Cuándo comenzar:</b> '+(answers[4]||'-');
+
+  const msg=`Hola Apolo, soy ${name}.%0A`+
+    `Completé la autoevaluación:%0A`+
+    `- Quiero mejorar: ${answers[1]||'-'}%0A`+
+    `- Hace: ${answers[2]||'-'}%0A`+
+    `- Experiencia previa: ${answers[3]||'-'}%0A`+
+    `- Quiero comenzar: ${answers[4]||'-'}%0A`+
+    (email?`- Email: ${email}%0A`:'')+
+    `- Mi teléfono: ${phone}%0A`+
+    `Me gustaría coordinar un turno.`;
+  document.getElementById('resWa').href=`https://wa.me/${WA_NUMBER}?text=${msg}`;
+
+  /* Punto de integración con CRM / Google Sheet / webhook */
+  console.log('LEAD',{name,phone,email,...answers,score,clasificacion:hot?'PRIORITARIO':'INFORMATIVO'});
+}
+showStep(1);
+</script>
+</body>
+</html>
