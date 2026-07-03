@@ -247,4 +247,7 @@ footer{background:var(--navy-3);color:#fff;padding:64px 0 32px}
   .quiz-body{padding:28px 22px 32px}
   .quiz-top{padding:24px 24px}
   .wrap{padding:0 18px}
+  .nav-inner{height:64px}
+  .logo-img{height:28px}
+  .foot-logo-img{height:34px}
 }
