@@ -10,7 +10,7 @@ export const site = {
   instagram: ["@apolo.centrocapilar", "@apolo.centroestetico"],
   address: "Microcentro, Ciudad Autónoma de Buenos Aires, Argentina",
   mapQuery: "Microcentro,Buenos+Aires,Argentina",
-  url: "https://apololanding.vercel.app", // reemplazar por el dominio final
+  url: "https://apolo-ochre.vercel.app", // cambiar por el dominio propio cuando lo tengan (ej: apolocentrocapilar.com)
   stats: [
     { num: "+2.000", label: "Tratamientos realizados" },
     { num: "2", label: "Áreas: capilar y estética" },

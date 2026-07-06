@@ -21,13 +21,13 @@ export const metadata: Metadata = {
     title: "Apolo · Centro Capilar y Estético",
     description: "Tratamientos capilares y estéticos con criterio profesional en el Microcentro porteño.",
     siteName: "Apolo",
-    images: [{ url: "/apolo-logo-fondoazul.png", width: 2250, height: 2250, alt: "Apolo · Centro Capilar y Estético" }],
+    images: [{ url: "/og-apolo.png", width: 1200, height: 630, alt: "Apolo · Centro Capilar y Estético" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Apolo · Centro Capilar y Estético",
     description: "Tratamientos capilares y estéticos con criterio profesional en el Microcentro porteño.",
-    images: ["/apolo-logo-fondoazul.png"],
+    images: ["/og-apolo.png"],
   },
   robots: { index: true, follow: true },
 };
