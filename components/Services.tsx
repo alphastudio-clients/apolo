@@ -1,7 +1,7 @@
 "use client";
 import { useState, type ReactNode } from "react";
 import {
-  IconSprout, IconShield, IconSyringe, IconDroplet, IconSearch, IconWhatsapp,
+  IconSprout, IconShield, IconSyringe, IconDroplet, IconSearch, IconWhatsapp, IconExosomes,
   IconZap, IconHands, IconRefresh, IconTarget, IconShieldHeart, IconFace, IconCircleCheck, IconSun,
 } from "./icons";
 
@@ -12,6 +12,7 @@ const capilar: Service[] = [
   { icon: <IconShield />, title: "Tratamiento anticaída", desc: "Abordaje farmacológico personalizado para frenar la caída y fortalecer el cabello existente." },
   { icon: <IconSyringe />, title: "Mesoterapia capilar", desc: "Microinyecciones de vitaminas y activos que nutren el folículo y estimulan el crecimiento." },
   { icon: <IconDroplet />, title: "Plasma rico en plaquetas (PRP)", desc: "Regeneración con tus propios factores de crecimiento para densificar y revitalizar el cuero cabelludo." },
+  { icon: <IconExosomes />, title: "Exosomas", desc: "Terapia regenerativa de última generación: los exosomas envían señales que reactivan los folículos y potencian el crecimiento capilar." },
   { icon: <IconSearch />, title: "Evaluación y tricoscopía", desc: "Diagnóstico digital del cuero cabelludo para definir el tratamiento exacto que necesitás." },
 ];
 

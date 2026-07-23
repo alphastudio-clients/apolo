@@ -25,6 +25,7 @@ export const IconShieldHeart = (p: P) => <S {...p}><path d="M20 13c0 5-3.5 7.4-7
 export const IconFace = (p: P) => <S {...p}><circle cx="12" cy="12" r="9" /><path d="M8.5 14.5s1.3 1.5 3.5 1.5 3.5-1.5 3.5-1.5" /><path d="M9 9h.01M15 9h.01" /></S>;
 export const IconCircleCheck = (p: P) => <S {...p}><circle cx="12" cy="12" r="9" /><path d="m8.5 12 2.3 2.3 4.7-4.6" /></S>;
 export const IconSun = (p: P) => <S {...p}><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4" /></S>;
+export const IconExosomes = (p: P) => <S {...p}><circle cx="12" cy="12" r="2.6" /><circle cx="5" cy="7" r="1.7" /><circle cx="19" cy="7" r="1.7" /><circle cx="6" cy="18" r="1.7" /><circle cx="18" cy="18" r="1.7" /><path d="M10.1 10.6 6.4 8.1M13.9 10.6l3.7-2.5M10.8 13.9 7.2 16.6M13.2 13.9l3.5 2.6" /></S>;
 
 export const IconWhatsappGlyph = ({ className }: P) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
