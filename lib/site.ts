@@ -8,7 +8,17 @@ export const site = {
   email: "info@apolocentrocapilar.com",
   hours: "Lunes a viernes · 9 a 19 hs",
   instagram: ["@apolo.centrocapilar", "@apolo.centroestetico"],
+  // Perfiles oficiales (para SEO/datos estructurados "sameAs")
+  social: [
+    "https://www.instagram.com/apolo.centrocapilar/",
+    "https://www.instagram.com/apolo.centroestetico/",
+    "https://www.tiktok.com/@apolo.centroestetico",
+  ],
   address: "Microcentro, Ciudad Autónoma de Buenos Aires, Argentina",
+  streetAddress: "", // TODO: completar con la dirección exacta (calle y número) — clave para el SEO local
+  addressLocality: "Ciudad Autónoma de Buenos Aires",
+  addressRegion: "CABA",
+  postalCode: "",
   mapQuery: "Microcentro,Buenos+Aires,Argentina",
   url: "https://apolo-ochre.vercel.app", // cambiar por el dominio propio cuando lo tengan (ej: apolocentrocapilar.com)
   stats: [

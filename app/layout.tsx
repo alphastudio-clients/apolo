@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Cormorant_Garamond } from "next/font/google";
 import { site } from "@/lib/site";
+import StructuredData from "@/components/StructuredData";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], variable: "--font-sans", display: "swap" });
@@ -8,6 +9,7 @@ const cormorant = Cormorant_Garamond({ subsets: ["latin"], weight: ["500", "600"
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
+  alternates: { canonical: "/" },
   title: "Apolo · Centro Capilar y Estético · Microcentro, Buenos Aires",
   description:
     "Apolo Centro Capilar y Estético en Microcentro, Buenos Aires. Implante capilar, tratamientos anticaída, depilación láser, despigmentantes, peeling, anti-acné y más. Turnos por WhatsApp.",
@@ -35,7 +37,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" className={`${inter.variable} ${cormorant.variable}`}>
-      <body>{children}</body>
+      <body>
+        <StructuredData />
+        {children}
+      </body>
     </html>
   );
 }
