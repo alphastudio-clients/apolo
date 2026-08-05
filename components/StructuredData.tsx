@@ -36,6 +36,12 @@ export default function StructuredData() {
     email: site.email,
     priceRange: "$$",
     address,
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: site.geo.lat,
+      longitude: site.geo.lng,
+    },
+    hasMap: `https://www.google.com/maps/search/?api=1&query=${site.geo.lat},${site.geo.lng}`,
     areaServed: { "@type": "City", name: "Ciudad Autónoma de Buenos Aires" },
     openingHoursSpecification: [
       {

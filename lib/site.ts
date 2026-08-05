@@ -14,12 +14,13 @@ export const site = {
     "https://www.instagram.com/apolo.centroestetico/",
     "https://www.tiktok.com/@apolo.centroestetico",
   ],
-  address: "Microcentro, Ciudad Autónoma de Buenos Aires, Argentina",
-  streetAddress: "", // TODO: completar con la dirección exacta (calle y número) — clave para el SEO local
+  address: "Av. Córdoba 610, San Nicolás · Microcentro, CABA",
+  streetAddress: "Av. Córdoba 610",
   addressLocality: "Ciudad Autónoma de Buenos Aires",
   addressRegion: "CABA",
-  postalCode: "",
-  mapQuery: "Microcentro,Buenos+Aires,Argentina",
+  postalCode: "C1054AAS",
+  geo: { lat: -34.5988576, lng: -58.3755861 },
+  mapQuery: "-34.5988576,-58.3755861",
   url: "https://apolo-ochre.vercel.app", // cambiar por el dominio propio cuando lo tengan (ej: apolocentrocapilar.com)
   stats: [
     { num: "+2.000", label: "Tratamientos realizados" },
