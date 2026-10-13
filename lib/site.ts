@@ -21,7 +21,7 @@ export const site = {
   postalCode: "C1054AAS",
   geo: { lat: -34.5988576, lng: -58.3755861 },
   mapQuery: "-34.5988576,-58.3755861",
-  url: "https://apolocentrocapilar.com", // dominio oficial
+  url: "https://apolocentro.com.ar", // dominio oficial
   stats: [
     { num: "+2.000", label: "Tratamientos realizados" },
     { num: "2", label: "Áreas: capilar y estética" },
