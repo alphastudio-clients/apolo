@@ -7,7 +7,12 @@ export const site = {
   whatsappDisplay: "+54 11 7365 8969",
   email: "info@apolocentrocapilar.com",
   hours: "Lunes a viernes · 9 a 18 hs",
-  instagram: ["@apolo.centrocapilar", "@apolo.centroestetico"],
+  instagram: ["@apolo.centrocapilar"],
+  // Sucursal nueva en Tandil (ubicación por confirmar)
+  tandil: {
+    whatsappNumber: "5492494241535", // internacional sin + ni espacios
+    whatsappDisplay: "+54 9 249 424-1535",
+  },
   // Perfiles oficiales (para SEO/datos estructurados "sameAs")
   social: [
     "https://www.instagram.com/apolo.centrocapilar/",
@@ -29,7 +34,7 @@ export const site = {
   ],
 };
 
-export function waLink(text?: string) {
-  const base = `https://wa.me/${site.whatsappNumber}`;
+export function waLink(text?: string, number: string = site.whatsappNumber) {
+  const base = `https://wa.me/${number}`;
   return text ? `${base}?text=${encodeURIComponent(text)}` : base;
 }
