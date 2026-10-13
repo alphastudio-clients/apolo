@@ -7,7 +7,7 @@ export default function TrustBar() {
       <div className="wrap trust-inner">
         <span><IconPin /> {site.city}</span>
         <span><IconWhatsapp /> Turnos por WhatsApp</span>
-        <span><IconClock /> Lun a Vie · 9 a 19 hs</span>
+        <span><IconClock /> Lun a Vie · 9 a 18 hs</span>
         <span><IconUsers /> Atención para todo público</span>
       </div>
     </div>

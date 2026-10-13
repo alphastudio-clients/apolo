@@ -6,7 +6,7 @@ export const site = {
   whatsappNumber: "5491173658969", // formato internacional sin + ni espacios
   whatsappDisplay: "+54 11 7365 8969",
   email: "info@apolocentrocapilar.com",
-  hours: "Lunes a viernes · 9 a 19 hs",
+  hours: "Lunes a viernes · 9 a 18 hs",
   instagram: ["@apolo.centrocapilar", "@apolo.centroestetico"],
   // Perfiles oficiales (para SEO/datos estructurados "sameAs")
   social: [
@@ -21,7 +21,7 @@ export const site = {
   postalCode: "C1054AAS",
   geo: { lat: -34.5988576, lng: -58.3755861 },
   mapQuery: "-34.5988576,-58.3755861",
-  url: "https://apolo-ochre.vercel.app", // cambiar por el dominio propio cuando lo tengan (ej: apolocentrocapilar.com)
+  url: "https://apolocentrocapilar.com", // dominio oficial
   stats: [
     { num: "+2.000", label: "Tratamientos realizados" },
     { num: "2", label: "Áreas: capilar y estética" },
