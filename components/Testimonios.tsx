@@ -40,7 +40,7 @@ export default function Testimonios() {
               {r.ejemplo && <span className="tst-ex">Ejemplo</span>}
               <Stars n={r.stars} />
               <p className="tst-text">“{r.text}”</p>
-              <p className="tst-author">{r.name}</p>
+              <p className="tst-author">{r.name}<span className="tst-date"> · {r.date}</span></p>
             </div>
           ))}
         </div>

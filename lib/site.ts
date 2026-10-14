@@ -39,12 +39,13 @@ export const site = {
     url: "https://maps.app.goo.gl/QdQpBrUXZba7hiGd6", // ver el perfil / las reseñas
     reviewUrl: "https://g.page/r/CXrkbnlyjQy0EBM/review", // dejar una reseña (link directo)
   },
-  // Testimonios. Los marcados como ejemplo se REEMPLAZAN por reseñas reales de Google.
-  // Cuando tengas las reales: poné name/text reales y cambiá `ejemplo: true` por `ejemplo: false`.
+  // Testimonios reales (reseñas de Google). Para sumar más: copiá el formato.
   reviews: [
-    { name: "Reseña de ejemplo", text: "Pegá acá una reseña real de Google. Nombre del paciente + el texto tal cual lo dejó.", stars: 5, ejemplo: true },
-    { name: "Reseña de ejemplo", text: "Pegá acá otra reseña real. Mostrá experiencias de capilar y de estética para cubrir las dos áreas.", stars: 5, ejemplo: true },
-    { name: "Reseña de ejemplo", text: "Pegá acá una tercera reseña real. Las que hablan de resultados naturales y atención suelen convertir mejor.", stars: 5, ejemplo: true },
+    { name: "Franco Basilio", date: "hace 3 meses", stars: 5, ejemplo: false, text: "Excelente servicio el que me dieron. Me realicé un transplante hace unos 7 meses aproximadamente y no puedo estar más contento. Me hicieron recuperar la confianza. Estoy muy agradecido con ellos. ¡Recomendadísimo!" },
+    { name: "Max Teves", date: "hace un mes", stars: 5, ejemplo: false, text: "¡Increíble espacio! Los chicos te escuchan, te ofrecen sus diferentes opciones, la mejor para cada uno, te acompañan a cada paso que das antes, durante y post tratamiento." },
+    { name: "Wilfrido Cortessi", date: "hace 10 meses", stars: 5, ejemplo: false, text: "Súper recomendable, nos recibieron muy bien, la atención impecable, muy buen equipo, todos muy atentos. Me explican todo detalladamente para que no queden dudas, y lo mismo la atención post cirugía." },
+    { name: "German Schamber", date: "hace 6 meses", stars: 5, ejemplo: false, text: "Realmente son un equipo muy profesional. Excelente atención y resultados fabulosos. Para quienes tienen miedo, les digo que vale la pena intentarlo." },
+    { name: "Angel Gines", date: "hace 6 meses", stars: 5, ejemplo: false, text: "Todo de 10 la experiencia en general. Los chicos, unos genios, siempre muy atentos antes, durante y después, con un trato personalizado impecable. ¡Altamente recomendable!" },
   ],
 };
 

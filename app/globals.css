@@ -270,6 +270,7 @@ footer{background:var(--navy-3);color:#fff;padding:64px 0 32px}
   text-transform:uppercase;color:var(--muted);background:var(--blue-soft);padding:3px 9px;border-radius:5px}
 .tst-text{font-size:15px;color:var(--ink);margin:14px 0 16px;line-height:1.6}
 .tst-author{font-weight:600;font-size:14.5px;color:var(--navy)}
+.tst-date{font-weight:400;color:var(--muted);font-size:13px}
 
 @media(max-width:860px){
   .nav-links,.nav-cta{display:none}
