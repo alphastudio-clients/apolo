@@ -8,6 +8,7 @@ import Location from "@/components/Location";
 import Faq from "@/components/Faq";
 import Footer from "@/components/Footer";
 import WhatsAppFab from "@/components/WhatsAppFab";
+import BookingModal from "@/components/BookingModal";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       </main>
       <Footer />
       <WhatsAppFab />
+      <BookingModal />
     </>
   );
 }

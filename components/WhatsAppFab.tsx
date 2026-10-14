@@ -1,10 +1,11 @@
-import { waLink } from "@/lib/site";
+"use client";
+import { openBooking } from "./BookingModal";
 import { IconWhatsappGlyph } from "./icons";
 
 export default function WhatsAppFab() {
   return (
-    <a href={waLink()} target="_blank" rel="noopener" className="fab" aria-label="WhatsApp">
+    <button type="button" className="fab" aria-label="Reservar turno por WhatsApp" onClick={openBooking}>
       <IconWhatsappGlyph className="" />
-    </a>
+    </button>
   );
 }

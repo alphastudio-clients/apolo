@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Logo from "./Logo";
-import { waLink } from "@/lib/site";
+import { openBooking } from "./BookingModal";
 
 const links = [
   { href: "#servicios", label: "Servicios" },
@@ -24,7 +24,7 @@ export default function Nav() {
         </nav>
         <div className="nav-cta">
           <a href="#evaluacion" className="btn btn-ghost">Autoevaluación</a>
-          <a href={waLink()} target="_blank" rel="noopener" className="btn btn-primary">Reservar turno</a>
+          <button type="button" className="btn btn-primary" onClick={openBooking}>Reservar turno</button>
         </div>
         <button className="burger" aria-label="Menú" onClick={() => setOpen((v) => !v)}>
           <span /><span /><span />
@@ -34,9 +34,9 @@ export default function Nav() {
         {links.map((l) => (
           <a key={l.href} href={l.href} onClick={() => setOpen(false)}>{l.label}</a>
         ))}
-        <a href={waLink()} target="_blank" rel="noopener" className="btn btn-primary" onClick={() => setOpen(false)}>
-          Reservar turno por WhatsApp
-        </a>
+        <button type="button" className="btn btn-primary" onClick={() => { setOpen(false); openBooking(); }}>
+          Reservar turno
+        </button>
       </div>
     </header>
   );
