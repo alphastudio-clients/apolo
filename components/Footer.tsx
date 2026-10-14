@@ -8,24 +8,33 @@ export default function Footer() {
           <div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/apolo-logo-blanco.png" alt="Apolo" className="foot-logo-img" />
-            <p style={{ maxWidth: 340 }}>
-              Centro capilar y estético en el Microcentro de Buenos Aires. Cuidamos tu cabello, tu
-              piel y tu cuerpo con criterio profesional.
+            <p style={{ maxWidth: 320 }}>
+              Centro capilar y estético con criterio profesional. Dos sucursales: Microcentro (CABA) y Tandil.
             </p>
+            <a href={`mailto:${site.email}`}>{site.email}</a>
           </div>
           <div>
             <h4>Navegación</h4>
             <a href="#servicios">Servicios</a>
             <a href="#porque">Por qué Apolo</a>
+            <a href="#opiniones">Opiniones</a>
             <a href="#evaluacion">Autoevaluación</a>
             <a href="#ubicacion">Ubicación</a>
           </div>
           <div>
-            <h4>Contacto</h4>
-            <a href={waLink()} target="_blank" rel="noopener">WhatsApp: {site.whatsappDisplay}</a>
-            <a href={`mailto:${site.email}`}>{site.email}</a>
+            <h4>Sucursal Microcentro</h4>
+            <p>{site.streetAddress} · CABA</p>
             <p>{site.hours}</p>
-            <p>{site.city}</p>
+            <a href={waLink(undefined, site.whatsappNumber)} target="_blank" rel="noopener">
+              WhatsApp: {site.whatsappDisplay}
+            </a>
+          </div>
+          <div>
+            <h4>Sucursal Tandil</h4>
+            <p>Nueva sucursal · ubicación próximamente</p>
+            <a href={waLink(undefined, site.tandil.whatsappNumber)} target="_blank" rel="noopener">
+              WhatsApp: {site.tandil.whatsappDisplay}
+            </a>
           </div>
         </div>
         <div className="foot-bottom">

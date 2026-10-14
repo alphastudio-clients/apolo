@@ -209,8 +209,9 @@ section{padding:92px 0}
 
 /* ---------- FOOTER ---------- */
 footer{background:var(--navy-3);color:#fff;padding:64px 0 32px}
-.foot-grid{display:grid;grid-template-columns:1.7fr 1fr 1fr;gap:44px;padding-bottom:42px;
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1.1fr 1.1fr;gap:40px;padding-bottom:42px;
   border-bottom:1px solid rgba(255,255,255,.1)}
+.foot-grid > div:first-child a{display:inline-block;color:#b7bae0;margin-top:4px}
 .foot-grid h4{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
   margin-bottom:18px;color:#fff}
 .foot-grid a,.foot-grid p{display:block;color:#b7bae0;font-size:14px;margin-bottom:11px}
