@@ -32,6 +32,20 @@ export const site = {
     { num: "2", label: "Áreas: capilar y estética" },
     { num: "100%", label: "Atención personalizada" },
   ],
+  // Reseñas de Google (dato real, verificable)
+  googleReviews: {
+    rating: "5,0",
+    count: 113,
+    url: "https://maps.app.goo.gl/QdQpBrUXZba7hiGd6", // ver el perfil / las reseñas
+    reviewUrl: "https://g.page/r/CXrkbnlyjQy0EBM/review", // dejar una reseña (link directo)
+  },
+  // Testimonios. Los marcados como ejemplo se REEMPLAZAN por reseñas reales de Google.
+  // Cuando tengas las reales: poné name/text reales y cambiá `ejemplo: true` por `ejemplo: false`.
+  reviews: [
+    { name: "Reseña de ejemplo", text: "Pegá acá una reseña real de Google. Nombre del paciente + el texto tal cual lo dejó.", stars: 5, ejemplo: true },
+    { name: "Reseña de ejemplo", text: "Pegá acá otra reseña real. Mostrá experiencias de capilar y de estética para cubrir las dos áreas.", stars: 5, ejemplo: true },
+    { name: "Reseña de ejemplo", text: "Pegá acá una tercera reseña real. Las que hablan de resultados naturales y atención suelen convertir mejor.", stars: 5, ejemplo: true },
+  ],
 };
 
 export function waLink(text?: string, number: string = site.whatsappNumber) {

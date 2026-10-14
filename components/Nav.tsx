@@ -6,6 +6,7 @@ import { openBooking } from "./BookingModal";
 const links = [
   { href: "#servicios", label: "Servicios" },
   { href: "#porque", label: "Por qué Apolo" },
+  { href: "#opiniones", label: "Opiniones" },
   { href: "#evaluacion", label: "Evaluación" },
   { href: "#ubicacion", label: "Ubicación" },
   { href: "#faq", label: "Preguntas" },

@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
 import Services from "@/components/Services";
 import WhyApolo from "@/components/WhyApolo";
+import Testimonios from "@/components/Testimonios";
 import Qualifier from "@/components/Qualifier";
 import Location from "@/components/Location";
 import Faq from "@/components/Faq";
@@ -19,6 +20,7 @@ export default function Home() {
         <TrustBar />
         <Services />
         <WhyApolo />
+        <Testimonios />
         <Qualifier />
         <Location />
         <Faq />

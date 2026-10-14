@@ -250,6 +250,27 @@ footer{background:var(--navy-3);color:#fff;padding:64px 0 32px}
 .branch-wa{width:36px;height:36px;border-radius:50%;background:#128C4A;display:grid;place-items:center;flex:0 0 auto}
 .branch-wa svg{width:20px;height:20px;fill:#fff}
 
+/* ---------- TESTIMONIOS / OPINIONES ---------- */
+.tst-sec{background:var(--blue-soft)}
+.stars{display:inline-flex;gap:3px;color:var(--gold)}
+.stars .star{width:18px;height:18px}
+.stars .star.off{color:var(--line)}
+.g-rating{display:flex;align-items:center;justify-content:center;gap:24px;flex-wrap:wrap;
+  background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px 30px;max-width:720px;
+  margin:0 auto 40px;box-shadow:var(--shadow-sm)}
+.g-num{font-family:var(--font-serif),serif;font-size:52px;font-weight:700;color:var(--navy);line-height:1}
+.g-mid .stars .star{width:22px;height:22px}
+.g-meta{font-size:14px;color:var(--muted);margin-top:6px}
+.g-cta{display:flex;gap:10px;flex-wrap:wrap;margin-left:auto}
+.tst-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tst-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:26px 24px}
+.tst-card.is-ex{border-style:dashed}
+.tst-ex{position:absolute;top:16px;right:16px;font-size:10px;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--muted);background:var(--blue-soft);padding:3px 9px;border-radius:5px}
+.tst-text{font-size:15px;color:var(--ink);margin:14px 0 16px;line-height:1.6}
+.tst-author{font-weight:600;font-size:14.5px;color:var(--navy)}
+
 @media(max-width:860px){
   .nav-links,.nav-cta{display:none}
   .burger{display:flex}
@@ -259,9 +280,14 @@ footer{background:var(--navy-3);color:#fff;padding:64px 0 32px}
   .why-inner{grid-template-columns:1fr;padding:48px 30px}
   .loc-inner{grid-template-columns:1fr}
   .grid{grid-template-columns:repeat(2,1fr)}
+  .tst-grid{grid-template-columns:repeat(2,1fr)}
+  .g-cta{margin-left:0}
   .foot-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:640px){
+  .tst-grid{grid-template-columns:1fr}
+  .g-rating{flex-direction:column;text-align:center;gap:14px}
+  .g-cta{margin-left:0;justify-content:center;width:100%}
   .nav-links,.nav-cta{display:none}
   .burger{display:flex}
   section{padding:64px 0}

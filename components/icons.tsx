@@ -27,6 +27,12 @@ export const IconCircleCheck = (p: P) => <S {...p}><circle cx="12" cy="12" r="9"
 export const IconSun = (p: P) => <S {...p}><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M6.3 17.7l-1.4 1.4M19.1 4.9l-1.4 1.4" /></S>;
 export const IconExosomes = (p: P) => <S {...p}><circle cx="12" cy="12" r="2.6" /><circle cx="5" cy="7" r="1.7" /><circle cx="19" cy="7" r="1.7" /><circle cx="6" cy="18" r="1.7" /><circle cx="18" cy="18" r="1.7" /><path d="M10.1 10.6 6.4 8.1M13.9 10.6l3.7-2.5M10.8 13.9 7.2 16.6M13.2 13.9l3.5 2.6" /></S>;
 
+export const IconStar = ({ className }: P) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M12 2.3l2.95 5.98 6.6.96-4.77 4.65 1.13 6.57L12 17.98l-5.91 3.11 1.13-6.57L2.45 9.24l6.6-.96z" />
+  </svg>
+);
+
 export const IconWhatsappGlyph = ({ className }: P) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
     <path d="M17.5 14.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.6.1-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.2-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6.1-.1.3-.3.4-.5.1-.2.2-.3.2-.5.1-.2 0-.4 0-.5 0-.1-.6-1.5-.9-2.1-.2-.5-.4-.4-.6-.5h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 2 3 4.7 4.2.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.7-.7 2-1.4.2-.6.2-1.2.2-1.3-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2z" />
