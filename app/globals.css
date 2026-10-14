@@ -219,6 +219,8 @@ footer{background:var(--navy-3);color:#fff;padding:64px 0 32px}
 .foot-logo-img{height:44px;width:auto;display:block;margin-bottom:18px}
 .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:26px;
   font-size:13px;color:#888cc0}
+.foot-bottom a{color:#b7bae0;text-decoration:none;font-weight:600}
+.foot-bottom a:hover{color:#fff}
 
 .fab{position:fixed;bottom:24px;right:24px;z-index:70;width:58px;height:58px;border-radius:50%;
   background:#128C4A;display:grid;place-items:center;box-shadow:0 12px 30px -8px rgba(18,140,74,.6);transition:.25s;

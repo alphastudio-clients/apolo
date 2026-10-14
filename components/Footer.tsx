@@ -30,7 +30,7 @@ export default function Footer() {
         </div>
         <div className="foot-bottom">
           <span>© {new Date().getFullYear()} Apolo · Centro Capilar y Estético</span>
-          <span>Hecho por Alpha Studio</span>
+          <span>Hecho por <a href="https://www.instagram.com/nahuelcontent/" target="_blank" rel="noopener">@nahuelcontent</a></span>
         </div>
       </div>
     </footer>
