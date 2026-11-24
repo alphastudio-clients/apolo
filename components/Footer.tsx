@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { site } from "@/lib/site";
 import WhatsAppLink from "./WhatsAppLink";
 import CookiePrefsLink from "./CookiePrefsLink";
@@ -22,6 +23,7 @@ export default function Footer() {
             <a href="/#opiniones">Opiniones</a>
             <a href="/#evaluacion">Autoevaluación</a>
             <a href="/#ubicacion">Ubicación</a>
+            <Link href="/privacidad">Política de privacidad</Link>
           </div>
           <div>
             <h4>Sucursal Microcentro</h4>
@@ -33,7 +35,7 @@ export default function Footer() {
           </div>
           <div>
             <h4>Sucursal Tandil</h4>
-            <p>Nueva sucursal · ubicación próximamente</p>
+            <p>{site.tandil.streetAddress} · Tandil</p>
             <WhatsAppLink sede="tandil" ubicacion="footer">
               WhatsApp: {site.tandil.whatsappDisplay}
             </WhatsAppLink>

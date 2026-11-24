@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import { site } from "@/lib/site";
 import WhatsAppLink from "./WhatsAppLink";
 import { IconWhatsappGlyph, IconPin } from "./icons";
 
@@ -65,7 +66,7 @@ export default function BookingModal() {
             <span className="branch-ic"><IconPin /></span>
             <span className="branch-txt">
               <strong>Tandil</strong>
-              <small>Nueva sucursal · ubicación cargando</small>
+              <small>{site.tandil.streetAddress} · Tandil</small>
             </span>
             <span className="branch-wa"><IconWhatsappGlyph className="" /></span>
           </WhatsAppLink>

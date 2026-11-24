@@ -1,3 +1,4 @@
+import { site } from "@/lib/site";
 import { IconPin, IconWhatsapp, IconClock, IconUsers } from "./icons";
 
 export default function TrustBar() {
@@ -6,7 +7,7 @@ export default function TrustBar() {
       <div className="wrap trust-inner">
         <span><IconPin /> Microcentro · Tandil</span>
         <span><IconWhatsapp /> Turnos por WhatsApp</span>
-        <span><IconClock /> Lun a Vie · 9 a 18 hs</span>
+        <span><IconClock /> {site.hoursShort}</span>
         <span><IconUsers /> Atención para todo público</span>
       </div>
     </div>

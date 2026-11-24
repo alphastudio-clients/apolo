@@ -8,10 +8,17 @@ export const site = {
   whatsappNumber: "5491173658969", // formato internacional sin + ni espacios
   whatsappDisplay: "+54 11 7365 8969",
   email: "info@apolocentrocapilar.com",
-  hours: "Lunes a viernes · 9 a 18 hs",
+  hours: "[PENDIENTE: horario real con sábados]",
+  hoursShort: "[PENDIENTE: horario real con sábados]",
+  // Teléfono fijo/celular de Microcentro para llamadas (formato tel:, ej "+541143211234").
+  // [PENDIENTE: confirmar número de llamadas de Microcentro; el único que hay hoy es el de WhatsApp]
+  phoneTel: "",
+  phoneDisplay: "",
   instagram: ["@apolo.centrocapilar"],
-  // Sucursal nueva en Tandil (ubicación por confirmar)
+  // Sucursal nueva en Tandil
   tandil: {
+    address: "4 de Abril 855, Tandil, Buenos Aires",
+    streetAddress: "4 de Abril 855",
     whatsappNumber: "5492494241535", // internacional sin + ni espacios
     whatsappDisplay: "+54 9 249 424-1535",
   },
