@@ -1,4 +1,5 @@
-import { site, waLink } from "@/lib/site";
+import { site } from "@/lib/site";
+import WhatsAppLink from "./WhatsAppLink";
 import { IconPin, IconClock, IconWhatsapp, IconMail, IconInstagram } from "./icons";
 
 export default function Location() {
@@ -18,7 +19,7 @@ export default function Location() {
             <div className="row"><div className="ico"><IconWhatsapp /></div><div><h4>WhatsApp</h4><p>{site.whatsappDisplay} · turnos y consultas</p></div></div>
             <div className="row"><div className="ico"><IconMail /></div><div><h4>Email</h4><p>{site.email}</p></div></div>
             <div className="row"><div className="ico"><IconInstagram /></div><div><h4>Instagram</h4><p>{site.instagram.join(" · ")}</p></div></div>
-            <a href={waLink()} target="_blank" rel="noopener" className="btn btn-wa" style={{ marginTop: 22, width: "100%" }}>Escribinos por WhatsApp</a>
+            <WhatsAppLink sede="microcentro" ubicacion="ubicacion" className="btn btn-wa" style={{ marginTop: 22, width: "100%" }}>Escribinos por WhatsApp</WhatsAppLink>
           </div>
           <div className="map">
             <iframe src={`https://www.google.com/maps?q=${site.mapQuery}&output=embed`} loading="lazy" title="Ubicación Apolo Microcentro" />
@@ -36,14 +37,9 @@ export default function Location() {
           <p style={{ display: "flex", alignItems: "center", gap: 8, color: "var(--navy-2)", fontWeight: 600, margin: "4px 0 18px" }}>
             <IconPin /> Ubicación cargando…
           </p>
-          <a
-            href={waLink(undefined, site.tandil.whatsappNumber)}
-            target="_blank"
-            rel="noopener"
-            className="btn btn-wa"
-          >
+          <WhatsAppLink sede="tandil" ubicacion="ubicacion" className="btn btn-wa">
             WhatsApp Tandil · {site.tandil.whatsappDisplay}
-          </a>
+          </WhatsAppLink>
         </div>
       </div>
     </section>

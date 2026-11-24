@@ -309,3 +309,14 @@ footer{background:var(--navy-3);color:#fff;padding:64px 0 32px}
   .trust-inner span{gap:11px}
   .trust-inner .ic{width:19px;height:19px}
 }
+
+/* ---------- BANNER DE COOKIES ---------- */
+.cookie{position:fixed;left:20px;bottom:20px;z-index:90;max-width:420px;background:#fff;
+  border:1px solid var(--line);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow);
+  font-size:13.5px;color:var(--muted);animation:fade .3s ease}
+.cookie a{color:var(--navy);text-decoration:underline;font-weight:600}
+.cookie-btns{display:flex;gap:10px;margin-top:14px;justify-content:flex-end}
+.cookie-btns .btn{padding:10px 20px;font-size:13.5px}
+@media(max-width:640px){
+  .cookie{left:12px;right:12px;bottom:12px;max-width:none}
+}

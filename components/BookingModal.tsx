@@ -1,20 +1,24 @@
 "use client";
 import { useEffect, useState } from "react";
-import { site, waLink } from "@/lib/site";
+import WhatsAppLink from "./WhatsAppLink";
 import { IconWhatsappGlyph, IconPin } from "./icons";
 
-/** Abre el selector de sucursal desde cualquier botón. */
-export function openBooking() {
-  window.dispatchEvent(new CustomEvent("apolo:book"));
+/** Abre el selector de sucursal desde cualquier botón. `origen` = dónde estaba el botón (nav, flotante...). */
+export function openBooking(origen: string = "nav") {
+  window.dispatchEvent(new CustomEvent("apolo:book", { detail: origen }));
 }
 
 const MSG = "Hola Apolo! Quiero reservar un turno";
 
 export default function BookingModal() {
   const [open, setOpen] = useState(false);
+  const [origen, setOrigen] = useState("nav");
 
   useEffect(() => {
-    const show = () => setOpen(true);
+    const show = (e: Event) => {
+      setOrigen(String((e as CustomEvent).detail || "nav"));
+      setOpen(true);
+    };
     window.addEventListener("apolo:book", show);
     return () => window.removeEventListener("apolo:book", show);
   }, []);
@@ -36,10 +40,10 @@ export default function BookingModal() {
         <p className="modal-sub">Elegí la sucursal y te derivamos al WhatsApp correspondiente.</p>
 
         <div className="branch-opts">
-          <a
-            href={waLink(`${MSG} en la sucursal Microcentro.`)}
-            target="_blank"
-            rel="noopener"
+          <WhatsAppLink
+            sede="microcentro"
+            ubicacion={origen}
+            text={`${MSG} en la sucursal Microcentro.`}
             className="branch-opt"
             onClick={() => setOpen(false)}
           >
@@ -49,12 +53,12 @@ export default function BookingModal() {
               <small>Av. Córdoba 612 · CABA</small>
             </span>
             <span className="branch-wa"><IconWhatsappGlyph className="" /></span>
-          </a>
+          </WhatsAppLink>
 
-          <a
-            href={waLink(`${MSG} en la sucursal Tandil.`, site.tandil.whatsappNumber)}
-            target="_blank"
-            rel="noopener"
+          <WhatsAppLink
+            sede="tandil"
+            ubicacion={origen}
+            text={`${MSG} en la sucursal Tandil.`}
             className="branch-opt"
             onClick={() => setOpen(false)}
           >
@@ -64,7 +68,7 @@ export default function BookingModal() {
               <small>Nueva sucursal · ubicación cargando</small>
             </span>
             <span className="branch-wa"><IconWhatsappGlyph className="" /></span>
-          </a>
+          </WhatsAppLink>
         </div>
       </div>
     </div>

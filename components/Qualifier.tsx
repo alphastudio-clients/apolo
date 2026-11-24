@@ -1,9 +1,10 @@
 "use client";
-import { useState } from "react";
-import { waLink } from "@/lib/site";
+import { useRef, useState } from "react";
+import WhatsAppLink from "./WhatsAppLink";
+import { trackQuizComplete, trackQuizStart, type Area } from "@/lib/track";
 import { IconCheck } from "./icons";
 
-type Opt = { val: string; score?: number };
+type Opt = { val: string; score?: number; area?: Area };
 type Question = { key: string; title: string; label: string; hint: string; opts: Opt[] };
 
 const questions: Question[] = [
@@ -11,10 +12,10 @@ const questions: Question[] = [
     key: "interes", title: "Comencemos", label: "¿Qué te gustaría mejorar?",
     hint: "Elegí el área que más te interesa.",
     opts: [
-      { val: "Cabello (caída, densidad, implante)" },
-      { val: "Piel / rostro (manchas, acné, hidratación)" },
-      { val: "Cuerpo (depilación láser, despigmentante, masajes)" },
-      { val: "Todavía no estoy seguro/a" },
+      { val: "Cabello (caída, densidad, implante)", area: "cabello" },
+      { val: "Piel / rostro (manchas, acné, hidratación)", area: "piel" },
+      { val: "Cuerpo (depilación láser, despigmentante, masajes)", area: "cuerpo" },
+      { val: "Todavía no estoy seguro/a", area: "no_seguro" },
     ],
   },
   {
@@ -57,7 +58,9 @@ export default function Qualifier() {
   const [form, setForm] = useState({ name: "", phone: "", email: "" });
   const [done, setDone] = useState(false);
   const [saveState, setSaveState] = useState<"idle" | "ok" | "err">("idle");
-  const [waHref, setWaHref] = useState("#");
+  const [waText, setWaText] = useState("");
+  const started = useRef(false);
+  const area = useRef<Area>("no_seguro");
 
   const isDataStep = step === questions.length;
   const q = questions[step];
@@ -65,6 +68,11 @@ export default function Qualifier() {
   const canNext = isDataStep ? form.name.trim() && form.phone.trim() : !!(q && answers[q.key]);
 
   function pick(o: Opt) {
+    if (!started.current) {
+      started.current = true;
+      trackQuizStart();
+    }
+    if (o.area) area.current = o.area;
     setAnswers((a) => ({ ...a, [q.key]: o.val }));
     if (o.score !== undefined) setScore(o.score);
   }
@@ -99,7 +107,8 @@ export default function Qualifier() {
       (form.email ? `- Email: ${form.email}\n` : "") +
       `- Mi teléfono: ${form.phone}\n` +
       `Me gustaría coordinar un turno.`;
-    setWaHref(waLink(msg));
+    setWaText(msg);
+    trackQuizComplete(area.current); // solo la categoría general, nunca datos personales
     setDone(true);
   }
 
@@ -165,9 +174,9 @@ export default function Qualifier() {
                   <b>Experiencia:</b> {answers.experiencia || "-"}<br />
                   <b>Cuándo comenzar:</b> {answers.cuando || "-"}
                 </div>
-                <a href={waHref} target="_blank" rel="noopener" className="btn btn-wa">
+                <WhatsAppLink sede="microcentro" ubicacion="autoevaluacion" text={waText} className="btn btn-wa">
                   Coordinar mi turno por WhatsApp
-                </a>
+                </WhatsAppLink>
                 {saveState === "ok" && <p className="savenote ok">Tus datos quedaron registrados. Te contactamos pronto.</p>}
                 {saveState === "err" && <p className="savenote err">No pudimos registrar el envío, pero podés escribirnos igual por WhatsApp.</p>}
               </div>

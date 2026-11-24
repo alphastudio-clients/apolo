@@ -25,7 +25,7 @@ export default function Nav() {
         </nav>
         <div className="nav-cta">
           <a href="#evaluacion" className="btn btn-ghost">Autoevaluación</a>
-          <button type="button" className="btn btn-primary" onClick={openBooking}>Reservar turno</button>
+          <button type="button" className="btn btn-primary" onClick={() => openBooking("nav")}>Reservar turno</button>
         </div>
         <button className="burger" aria-label="Menú" onClick={() => setOpen((v) => !v)}>
           <span /><span /><span />
@@ -35,7 +35,7 @@ export default function Nav() {
         {links.map((l) => (
           <a key={l.href} href={l.href} onClick={() => setOpen(false)}>{l.label}</a>
         ))}
-        <button type="button" className="btn btn-primary" onClick={() => { setOpen(false); openBooking(); }}>
+        <button type="button" className="btn btn-primary" onClick={() => { setOpen(false); openBooking("nav_movil"); }}>
           Reservar turno
         </button>
       </div>
