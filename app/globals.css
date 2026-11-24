@@ -320,3 +320,52 @@ footer{background:var(--navy-3);color:#fff;padding:64px 0 32px}
 @media(max-width:640px){
   .cookie{left:12px;right:12px;bottom:12px;max-width:none}
 }
+
+.card-link{display:inline-block;margin-top:14px;font-size:14px;font-weight:600;color:var(--navy);
+  border-bottom:1.5px solid var(--gold)}
+.card-link:hover{color:var(--navy-2)}
+
+/* ---------- /implante-capilar ---------- */
+.imp-rating{display:flex;align-items:center;gap:12px;margin-top:22px;font-size:15px;color:#e8e9fb;flex-wrap:wrap}
+.imp-cta-big{padding:18px 34px;font-size:16.5px}
+.imp-big{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.imp-big div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:20px}
+.imp-big strong{display:block;font-family:var(--font-serif),serif;font-size:36px;line-height:1;color:var(--gold)}
+.imp-big span{display:block;margin-top:8px;font-size:13px;color:#c1c4ea}
+.imp-feature{display:flex;gap:22px;align-items:flex-start;background:var(--navy);color:#fff;border-radius:18px;
+  padding:34px 36px;margin-bottom:22px;box-shadow:var(--shadow)}
+.imp-feature h3{font-size:28px;font-weight:600;margin-bottom:8px}
+.imp-feature p{color:#c6c9ee;font-size:15.5px;max-width:720px}
+.imp-feature-ico{width:54px;height:54px;border-radius:12px;background:rgba(184,150,63,.18);color:var(--gold);
+  display:grid;place-items:center;flex:0 0 auto}
+.imp-incl{grid-template-columns:repeat(2,1fr)}
+.imp-pay{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;border:1px solid var(--line);
+  border-radius:18px;padding:36px 40px}
+.imp-pay h2{font-size:clamp(28px,3.4vw,38px);font-weight:600;margin-top:12px}
+.imp-pay ul{list-style:none;display:flex;flex-direction:column;gap:14px}
+.imp-pay li{display:flex;align-items:center;gap:13px;font-size:16px;font-weight:500}
+.imp-pay .tick{width:28px;height:28px;border-radius:7px;background:var(--blue-soft);color:var(--navy-2);
+  display:grid;place-items:center;flex:0 0 auto}
+.imp-pay .tick svg{width:16px;height:16px}
+.imp-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.imp-step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px}
+.imp-step .n{font-family:var(--font-serif),serif;font-size:34px;color:var(--gold);font-weight:700;line-height:1}
+.imp-step h3{font-size:22px;font-weight:600;margin:12px 0 8px}
+.imp-step p{font-size:14.5px;color:var(--muted)}
+.imp-results{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.imp-result{position:relative;aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;background:var(--blue-soft);
+  border:1.5px dashed var(--line);display:grid;place-items:center;padding:20px;text-align:center;
+  color:var(--muted);font-size:14px}
+.imp-addr{display:inline-flex;align-items:center;gap:8px;margin-top:16px;color:var(--muted);font-size:14.5px}
+.imp-addr svg{width:18px;height:18px}
+.nav .btn-wa{padding:12px 22px}
+@media(max-width:900px){
+  .imp-steps{grid-template-columns:repeat(2,1fr)}
+  .imp-pay{grid-template-columns:1fr;padding:30px 26px}
+}
+@media(max-width:640px){
+  .imp-incl,.imp-steps,.imp-results{grid-template-columns:1fr}
+  .imp-feature{flex-direction:column;padding:26px 24px}
+  .imp-cta-big{width:100%;white-space:normal;text-align:center}
+  .nav .btn-wa{padding:10px 14px;font-size:13px}
+}

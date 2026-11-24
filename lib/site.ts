@@ -1,3 +1,5 @@
+export type Review = { name: string; date: string; stars: number; ejemplo: boolean; tema?: string; text: string };
+
 // Datos centrales del sitio. Cambiá acá el WhatsApp, mail, etc. y se actualiza en todo el sitio.
 export const site = {
   name: "Apolo",
@@ -35,18 +37,19 @@ export const site = {
   // Reseñas de Google (dato real, verificable)
   googleReviews: {
     rating: "5,0",
-    count: 113,
+    countLabel: "+130", // se muestra como "+130 reseñas" (actualizar cuando crezca)
     url: "https://maps.app.goo.gl/QdQpBrUXZba7hiGd6", // ver el perfil / las reseñas
     reviewUrl: "https://g.page/r/CXrkbnlyjQy0EBM/review", // dejar una reseña (link directo)
   },
   // Testimonios reales (reseñas de Google). Para sumar más: copiá el formato.
+  // tema: "implante" = la reseña habla explícitamente de implante/trasplante (se usa en /implante-capilar).
   reviews: [
-    { name: "Franco Basilio", date: "hace 3 meses", stars: 5, ejemplo: false, text: "Excelente servicio el que me dieron. Me realicé un transplante hace unos 7 meses aproximadamente y no puedo estar más contento. Me hicieron recuperar la confianza. Estoy muy agradecido con ellos. ¡Recomendadísimo!" },
+    { name: "Franco Basilio", date: "hace 3 meses", stars: 5, ejemplo: false, tema: "implante", text: "Excelente servicio el que me dieron. Me realicé un transplante hace unos 7 meses aproximadamente y no puedo estar más contento. Me hicieron recuperar la confianza. Estoy muy agradecido con ellos. ¡Recomendadísimo!" },
     { name: "Max Teves", date: "hace un mes", stars: 5, ejemplo: false, text: "¡Increíble espacio! Los chicos te escuchan, te ofrecen sus diferentes opciones, la mejor para cada uno, te acompañan a cada paso que das antes, durante y post tratamiento." },
     { name: "Wilfrido Cortessi", date: "hace 10 meses", stars: 5, ejemplo: false, text: "Súper recomendable, nos recibieron muy bien, la atención impecable, muy buen equipo, todos muy atentos. Me explican todo detalladamente para que no queden dudas, y lo mismo la atención post cirugía." },
     { name: "German Schamber", date: "hace 6 meses", stars: 5, ejemplo: false, text: "Realmente son un equipo muy profesional. Excelente atención y resultados fabulosos. Para quienes tienen miedo, les digo que vale la pena intentarlo." },
     { name: "Angel Gines", date: "hace 6 meses", stars: 5, ejemplo: false, text: "Todo de 10 la experiencia en general. Los chicos, unos genios, siempre muy atentos antes, durante y después, con un trato personalizado impecable. ¡Altamente recomendable!" },
-  ],
+  ] as Review[],
 };
 
 export function waLink(text?: string, number: string = site.whatsappNumber) {

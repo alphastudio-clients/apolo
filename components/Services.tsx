@@ -1,14 +1,15 @@
 "use client";
 import { useState, type ReactNode } from "react";
+import Link from "next/link";
 import {
   IconSprout, IconShield, IconSyringe, IconDroplet, IconSearch, IconWhatsapp, IconExosomes,
   IconZap, IconHands, IconRefresh, IconTarget, IconShieldHeart, IconFace, IconCircleCheck, IconSun,
 } from "./icons";
 
-type Service = { icon: ReactNode; title: string; desc: string; tag?: string };
+type Service = { icon: ReactNode; title: string; desc: string; tag?: string; href?: string };
 
 const capilar: Service[] = [
-  { icon: <IconSprout />, title: "Implante capilar FUE", desc: "Restauración capilar con técnica FUE, folículo por folículo, para resultados permanentes y naturales.", tag: "Destacado" },
+  { icon: <IconSprout />, title: "Implante capilar FUE", desc: "Restauración capilar con técnica FUE, folículo por folículo, para resultados permanentes y naturales.", tag: "Destacado", href: "/implante-capilar" },
   { icon: <IconShield />, title: "Tratamiento anticaída", desc: "Abordaje farmacológico personalizado para frenar la caída y fortalecer el cabello existente." },
   { icon: <IconSyringe />, title: "Mesoterapia capilar", desc: "Microinyecciones de vitaminas y activos que nutren el folículo y estimulan el crecimiento." },
   { icon: <IconDroplet />, title: "Plasma rico en plaquetas (PRP)", desc: "Regeneración con tus propios factores de crecimiento para densificar y revitalizar el cuero cabelludo." },
@@ -35,6 +36,7 @@ function Card({ s }: { s: Service }) {
       <div className="ico">{s.icon}</div>
       <h3>{s.title}</h3>
       <p>{s.desc}</p>
+      {s.href && <Link href={s.href} className="card-link">Ver cómo es el implante →</Link>}
     </div>
   );
 }
