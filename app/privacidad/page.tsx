@@ -27,12 +27,12 @@ export default function Privacidad() {
           <div className="wrap legal">
             <span className="eyebrow">Política de privacidad</span>
             <h1>Tus datos, en claro</h1>
-            <p className="legal-date">Última actualización: [PENDIENTE: fecha de publicación]</p>
+            <p className="legal-date">Última actualización: 26 de noviembre de 2026</p>
 
             <h2>Quiénes somos</h2>
             <p>
               Apolo · Centro Capilar y Estético ({site.url.replace("https://", "")}). Responsable de este sitio:
-              [PENDIENTE: razón social y CUIT del titular]. Podés escribirnos a{" "}
+              Tecnocapilar SRL (CUIT 30-71962216-6). Podés escribirnos a{" "}
               <a href={`mailto:${site.email}`}>{site.email}</a>.
             </p>
 

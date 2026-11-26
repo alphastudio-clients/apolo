@@ -32,17 +32,16 @@ const incluye = [
   { h: "La intervención FUE", p: "Técnica FUE, folículo por folículo." },
   { h: "Kit de cuidados", p: "Lo que necesitás para cuidar la zona trasplantada después de la cirugía." },
   { h: "Medicación por 3 meses", p: "Para acompañar tu recuperación durante los primeros meses." },
-  // [PENDIENTE: confirmar durante cuántos meses se bonifican la mesoterapia y el plasma]
-  { h: "1 mesoterapia y 1 plasma por mes, bonificados", p: "Sesiones bonificadas dentro de tu seguimiento. [PENDIENTE: durante cuántos meses]" },
+  { h: "1 mesoterapia y 1 plasma bonificados", p: "Después del implante bonificamos una sesión de cada uno, a partir del primer mes de la intervención." },
 ];
 
 const pagos = ["Pago de contado", "Transferencia", "Tarjeta en 3 cuotas sin interés"];
 
 const pasos = [
-  { n: "01", h: "Evaluación", p: "Nos contás tu caso por WhatsApp y evaluamos tu cuero cabelludo para ver si sos candidato/a y qué zona conviene trabajar." },
-  { n: "02", h: "Día de la cirugía", p: "Realizamos la intervención FUE. Dura unas 8 horas." },
-  { n: "03", h: "Post cirugía", p: "Te llevás el kit de cuidados y la medicación por 3 meses, con las indicaciones para los primeros días." },
-  { n: "04", h: "Controles mensuales", p: "Nos vemos todos los meses durante tu seguimiento médico para cuidar la evolución de los resultados." },
+  { n: "01", h: "Evaluación", p: "Analizamos tu caso en una consulta presencial o por videollamada: vemos la zona donante, diseñamos la línea y calculamos cuántas unidades foliculares necesitás. Antes de la cirugía pedimos análisis de laboratorio." },
+  { n: "02", h: "Día de la cirugía", p: "Se hace con anestesia local y técnica FUE, folículo por folículo, y dura alrededor de 8 horas. Te vas a tu casa ese mismo día, con el kit de cuidados y la medicación para 3 meses." },
+  { n: "03", h: "Post cirugía", p: "Te damos indicaciones de lavado y cuidados para los primeros días. Al mes arrancás con la mesoterapia y el plasma bonificados." },
+  { n: "04", h: "Controles mensuales", p: "Son mensuales, con seguimiento médico de 12 meses si el implante es frontal o en zona media, o de 18 meses si es en la coronilla." },
 ];
 
 // Cuando lleguen las fotos (con consentimiento firmado): subirlas a /public/resultados/ y completar `src`.
@@ -53,12 +52,11 @@ const resultados: { src?: string; alt: string }[] = [
   { alt: "[PENDIENTE: reel o foto de paciente 3]" },
 ];
 
-const PEND = "[PENDIENTE: respuesta confirmada por el equipo médico]";
 const faqs = [
-  { q: "¿Duele?", a: PEND },
+  { q: "¿Duele?", a: "No. La cirugía se hace con anestesia local, así que lo único que se siente es el pinchazo de la anestesia al principio. Los primeros días puede haber alguna molestia leve, que se controla con la medicación que te indicamos." },
   { q: "¿Cuánto dura la cirugía?", a: "La cirugía dura unas 8 horas." },
-  { q: "¿Cuándo vuelvo a trabajar?", a: PEND },
-  { q: "¿Es permanente?", a: PEND },
+  { q: "¿Cuándo vuelvo a trabajar?", a: "A los 3 días. Para actividad física intensa te damos el alta normalmente a las 2 semanas, y para sol o pileta, a las 4." },
+  { q: "¿Es permanente?", a: "Sí. Los folículos se sacan de la zona donante (nuca y costados), que no se ve afectada por la caída hormonal, así que el pelo implantado se mantiene. El pelo propio que no se implantó puede seguir cayendo, y por eso acompañamos con tratamiento. El pelo nuevo empieza a crecer a los 3 meses. El resultado final se ve al año en la zona frontal y al año y medio en la coronilla." },
   { q: "¿Atienden pacientes del exterior?", a: "Sí. Incluimos hotel por 3 días y 2 noches para 2 personas, y los traslados." },
 ];
 
@@ -147,7 +145,6 @@ export default function ImplantePage() {
               <div>
                 <span className="eyebrow">Formas de pago</span>
                 <h2>Elegí cómo pagarlo</h2>
-                {/* [PENDIENTE: precio "desde"] — cuando esté confirmado, mostrar acá: "Desde $X" */}
               </div>
               <ul>
                 {pagos.map((p) => (

@@ -204,7 +204,7 @@ section{padding:92px 0}
 .faq-q .plus{color:var(--navy-2);font-size:24px;transition:.3s;flex:0 0 auto;font-weight:300}
 .faq-item.open .plus{transform:rotate(45deg)}
 .faq-a{max-height:0;overflow:hidden;transition:.3s;color:var(--muted);font-size:14.5px}
-.faq-item.open .faq-a{max-height:240px}
+.faq-item.open .faq-a{max-height:520px}
 .faq-a p{padding:0 24px 22px}
 
 /* ---------- FOOTER ---------- */

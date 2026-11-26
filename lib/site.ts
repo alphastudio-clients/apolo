@@ -8,14 +8,13 @@ export const site = {
   whatsappNumber: "5491173658969", // formato internacional sin + ni espacios
   whatsappDisplay: "+54 11 7365 8969",
   email: "info@apolocentrocapilar.com",
-  hours: "[PENDIENTE: horario real con sábados]",
-  hoursShort: "[PENDIENTE: horario real con sábados]",
-  // Teléfono fijo/celular de Microcentro para llamadas (formato tel:, ej "+541143211234").
-  // [PENDIENTE: confirmar número de llamadas de Microcentro; el único que hay hoy es el de WhatsApp]
-  phoneTel: "",
-  phoneDisplay: "",
+  hours: "Lunes a viernes · 9 a 18 hs · Sábados · 9 a 14 hs",
+  hoursShort: "Lun a Vie 9 a 18 · Sáb 9 a 14 hs",
+  // Recepción de Microcentro (para llamadas). El WhatsApp es otro número.
+  phoneTel: "+541170605021",
+  phoneDisplay: "+54 11 7060 5021",
   instagram: ["@apolo.centrocapilar"],
-  // Sucursal nueva en Tandil
+  // Sucursal Tandil (mismo horario que Buenos Aires)
   tandil: {
     address: "4 de Abril 855, Tandil, Buenos Aires",
     streetAddress: "4 de Abril 855",
@@ -53,7 +52,7 @@ export const site = {
   reviews: [
     { name: "Franco Basilio", date: "hace 3 meses", stars: 5, ejemplo: false, tema: "implante", text: "Excelente servicio el que me dieron. Me realicé un transplante hace unos 7 meses aproximadamente y no puedo estar más contento. Me hicieron recuperar la confianza. Estoy muy agradecido con ellos. ¡Recomendadísimo!" },
     { name: "Max Teves", date: "hace un mes", stars: 5, ejemplo: false, text: "¡Increíble espacio! Los chicos te escuchan, te ofrecen sus diferentes opciones, la mejor para cada uno, te acompañan a cada paso que das antes, durante y post tratamiento." },
-    { name: "Wilfrido Cortessi", date: "hace 10 meses", stars: 5, ejemplo: false, text: "Súper recomendable, nos recibieron muy bien, la atención impecable, muy buen equipo, todos muy atentos. Me explican todo detalladamente para que no queden dudas, y lo mismo la atención post cirugía." },
+    { name: "Wilfrido Cortessi", date: "hace 10 meses", stars: 5, ejemplo: false, tema: "implante", text: "Súper recomendable, nos recibieron muy bien, la atención impecable, muy buen equipo, todos muy atentos. Me explican todo detalladamente para que no queden dudas, y lo mismo la atención post cirugía." },
     { name: "German Schamber", date: "hace 6 meses", stars: 5, ejemplo: false, text: "Realmente son un equipo muy profesional. Excelente atención y resultados fabulosos. Para quienes tienen miedo, les digo que vale la pena intentarlo." },
     { name: "Angel Gines", date: "hace 6 meses", stars: 5, ejemplo: false, text: "Todo de 10 la experiencia en general. Los chicos, unos genios, siempre muy atentos antes, durante y después, con un trato personalizado impecable. ¡Altamente recomendable!" },
   ] as Review[],
